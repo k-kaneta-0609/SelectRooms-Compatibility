@@ -2,13 +2,21 @@ Attribute VB_Name = "compatibility"
 Option Compare Database
 Option Explicit
 
-Function Compatibility_Main() As Variant
+Function Compatibility_Main(Optional a As String = "", Optional b As String = "") As Variant
 
     Dim name1 As String
-    name1 = InputBox("1人目の名前は？", "英字の半角小文字で入力してね。"): If name1 = "" Then Exit Function
+    If a = "" Then
+        name1 = InputBox("1人目の名前は？", "英字の半角小文字で入力してね。"): If name1 = "" Then Exit Function
+    Else
+        name1 = a
+    End If
     
     Dim name2 As String
-    name2 = InputBox("2人目の名前は？", "英字の半角小文字で入力してね。"): If name1 = "" Then Exit Function
+    If b = "" Then
+        name2 = InputBox("2人目の名前は？", "英字の半角小文字で入力してね。"): If name1 = "" Then Exit Function
+    Else
+        name2 = b
+    End If
     
     ' 1組目の文字列を数値化
     Dim nameNum1() As Integer
