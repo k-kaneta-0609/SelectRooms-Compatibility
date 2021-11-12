@@ -48,7 +48,6 @@ End Function
 Function nameNumbers(name As String) As Integer()
 
     Dim i As Integer
-    Dim length As Integer
     ReDim nameNums(Len(name) - 1) As Integer
     For i = 0 To Len(name) - 1 Step 1
         nameNums(i) = Asc(Mid(name, i + 1, 1)) - 96
